@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compact Layout</title>
+
+<style>
+    body{
+        margin:0;
+        font-family:Arial, sans-serif;
+    }
+
+    .box{
+        border:1px solid black;
+        padding:10px;         /* reduced padding */
+        text-align:center;
+        font-size:16px;       /* smaller text */
+        box-sizing:border-box;
+    }
+
+    #header, #nav-global, #footer{ background:#55aaff; }
+    #page-title{ background:#ff9999; }
+    #content1, #content2, #content3{ background:#ffcc99; }
+    #nav-local, #sidebar{ background:#ffff99; }
+
+    /* compact grid */
+    .container{
+        display:grid;
+        grid-template-columns:2fr 1fr;
+        gap:5px;              /* smaller gap */
+        padding:5px;
+    }
+
+    .lower{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:5px;
+        margin-top:5px;
+    }
+</style>
+</head>
+
+<body>
+
+<div id="header" class="box">#Header</div>
+<div id="nav-global" class="box">#Nav Global</div>
+
+<div class="container">
+
+    <div>
+        <div id="page-title" class="box">#Page Title</div>
+        <div id="content1" class="box" style="margin-top:5px;">#Content 1</div>
+
+        <div class="lower">
+            <div id="content2" class="box">#Content 2</div>
+            <div id="content3" class="box">#Content 3</div>
+            <div id="sidebar" class="box">#Sidebar</div>
+        </div>
+    </div>
+
+    <div id="nav-local" class="box">#Nav Local</div>
+
+</div>
+
+<div id="footer" class="box">#Footer</div>
+
+</body>
+</html>
